@@ -1,0 +1,48 @@
+{
+    "books": [
+      {
+        "id": 1,
+        "prog": "A350",
+        "disign": true,
+        "development": false
+      },
+      {
+        "id": 2,
+        "prog": "A320",
+        "disign": false,
+        "development": true
+      },
+      {
+        "id": 3,
+        "prog": "A380",
+        "disign": false,
+        "development": true
+      },
+      {
+        "id": 4,
+        "prog": "A400M",
+        "disign": false,
+        "development": false
+      },
+      {
+        "id": 5,
+        "prog": "A330",
+        "disign": true,
+        "development": true
+      }
+    ],
+"users": [
+    {
+      "id": 1,
+      "name": "John doe",
+      "address": "rue des hirondelles 31200",
+      "phone": "0645127489",
+      "email": "john@yahoo.fr",
+      "password": "U2FsdGVkX1/T2YpgRzZAKCOLCSy7wyJL0u95kTMLVik",
+      "roles": [
+        "ADMIN",
+        "USER"
+      ]
+    }
+  ]
+}
