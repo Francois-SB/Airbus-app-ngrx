@@ -17,6 +17,17 @@ export class AircraftsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+onActionEvent($event : any){
+  switch($event){
+    case "ALL_AIRCRAFTS" : this.getAllAircrafts();
+    break;
+    case "DESIGNED_AIRCRAFTS" : this.getDesignedAircrafts();
+    break;
+    case "DEVELOPMENT_AIRCRAFTS" : this.getDevelopmentAircrafts();
+    break;
+  }
+}
+
 
   getAllAircrafts(){
     console.log("all");
