@@ -17,13 +17,19 @@ export class AircraftsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   getAllAircrafts(){
+    console.log("all");
+    
     this.aircrafts$ = this.aircraftService.getAircrafts().pipe(
       map(data => ({dataState : DataStateEnum.LOADED, data : data})),
       startWith({dataState : DataStateEnum.LOADING}),
       catchError(err => of({dataState : DataStateEnum.ERROR, errorMessage : err.message}))
     )}
+
     getDesignedAircrafts(){
+      console.log("des");
+      
       this.aircrafts$ = this.aircraftService.getDesignedAircrafts().pipe(
         map(data => ({dataState : DataStateEnum.LOADED, data : data})),
         startWith({dataState : DataStateEnum.LOADING}),
@@ -31,6 +37,8 @@ export class AircraftsComponent implements OnInit {
     )}
 
     getDevelopmentAircrafts(){
+      console.log("dev");
+      
       this.aircrafts$ = this.aircraftService.getDeveloppementAircrafts().pipe(
         map(data => ({dataState : DataStateEnum.LOADED, data : data})),
         startWith({dataState : DataStateEnum.LOADING}),

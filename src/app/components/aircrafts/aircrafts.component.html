@@ -1,8 +1,8 @@
 <div>
     <ul>
         <li><button class="btn btn-outline-info m-2" (click)="getAllAircrafts()">Aircrafts</button><!-- (click)="getAllAircrafts()" -->
-            <button class="btn btn-outline-info m-2" >en étude</button><!-- (click)="getDesignedAircrafts()" -->
-            <button class="btn btn-outline-info m-2" >en construction</button><!--  (click)="getDevelopmentAircrafts()"-->
+            <button class="btn btn-outline-info m-2" (click)="getDesignedAircrafts()">en étude</button><!-- (click)="getDesignedAircrafts()" -->
+            <button class="btn btn-outline-info m-2" (click)="getDevelopmentAircrafts()">en construction</button><!--  (click)="getDevelopmentAircrafts()"-->
         </li>
     </ul>
     <ng-container *ngIf="aircrafts$ | async as result" [ngSwitch]="result.dataState">

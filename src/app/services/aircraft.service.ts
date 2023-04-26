@@ -13,22 +13,30 @@ export class AircraftService {
   constructor(private http:HttpClient) { }
 
   public getAircrafts():Observable<Aircraft[]> {
+    console.log("getAircrafts");
+    
     /* let host = Math.random() > 0.5 ? environment.host : environment.unreachableHost; */
     return this.http.get<Aircraft[]>(environment.host + "/aircrafts");
   }
 
   
   public getDesignedAircrafts():Observable<Aircraft[]> {
+    console.log("getDesignedAircrafts");
+    
     return this.http.get<Aircraft[]>(environment.host + "/aircrafts?design=true");
   }
 
   
   public getDeveloppementAircrafts():Observable<Aircraft[]> {
+    console.log("getDeveloppementAircrafts");
+    
     return this.http.get<Aircraft[]>(environment.host + "/aircrafts?development=true");
   }
 
   
   public getAircraftsByMsn(id:number):Observable<Aircraft> {
+    console.log("getAircraftsByMsn");
+    
     return this.http.get<Aircraft>(environment.host + "/aircrafts/" + id);
   }
 }
