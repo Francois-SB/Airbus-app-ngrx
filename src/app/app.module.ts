@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AircraftsComponent } from './components/aircrafts/aircrafts.component';
 import { AircraftsNavbarComponent } from './components/aircrafts/aircrafts-navbar/aircrafts-navbar.component';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,9 @@ import { AircraftsNavbarComponent } from './components/aircrafts/aircrafts-navba
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

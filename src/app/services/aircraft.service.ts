@@ -39,4 +39,12 @@ export class AircraftService {
     
     return this.http.get<Aircraft>(environment.host + "/aircrafts/" + id);
   }
+
+  public getAircraftsByProgSearch(payload:any):Observable<Aircraft[]> {
+    console.log("searchService"+payload);
+    let searchString = <String> payload;
+    console.log("searchString  "+ searchString);
+    
+    return this.http.get<Aircraft[]>(environment.host + "/aircrafts?prog_like=" + payload);
+  }
 }
