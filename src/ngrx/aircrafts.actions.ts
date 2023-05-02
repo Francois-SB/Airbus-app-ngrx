@@ -12,13 +12,15 @@ export class GetAllAircraftsAction implements Action{
     constructor(public payload:any) {
     }
 }
-export class GetAircraftsActionSuccess implements Action{
+export class GetAllAircraftsActionSuccess implements Action{
     type: AircraftsActionsTypes = AircraftsActionsTypes.GET_ALL_AIRCRAFTS_SUCCESS;
     constructor(public payload:Aircraft[]){
     }
 }
-/* export class GetAircraftsActionError implements Action{
+export class GetAllAircraftsActionError implements Action{
     type: AircraftsActionsTypes = AircraftsActionsTypes.GET_ALL_AIRCRAFTS_ERROR;
     constructor(public payload:string) {
     }
-} */
+}
+
+export type AircraftsActions = GetAllAircraftsAction | GetAllAircraftsActionSuccess | GetAllAircraftsActionError;
