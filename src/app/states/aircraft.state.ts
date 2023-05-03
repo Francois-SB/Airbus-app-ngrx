@@ -1,4 +1,4 @@
-/* export enum DataStateEnum {
+export enum DataStateEnum {
     LOADING,LOADED,
     ERROR
     
@@ -6,7 +6,6 @@
 
 export interface AppDataState<T> {
     dataState? : DataStateEnum,
-    data? : T,// TemplateStringsArray 
+    data? : T,/* TemplateStringsArray */
     errorMessage?:string
 }
- */
