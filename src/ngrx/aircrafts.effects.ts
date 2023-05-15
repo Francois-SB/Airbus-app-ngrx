@@ -29,7 +29,7 @@ export class AircraftsEffects {
         () => this.effectActions.pipe(
             ofType(AircraftsActionsTypes.GET_DESIGNED_AIRCRAFTS),
             mergeMap((action) => {
-                return this.aircraftService.getAircrafts().pipe(
+                return this.aircraftService.getDesignedAircrafts().pipe(
                     map((aircrafts) => new GetDesignedAircraftsActionSuccess(aircrafts)),
                     catchError((err) => of(new GetDesignedAircraftsActionError(err.message)))
                 )
@@ -41,7 +41,7 @@ export class AircraftsEffects {
         () => this.effectActions.pipe(
             ofType(AircraftsActionsTypes.GET_DEVELOPMENT_AIRCRAFTS),
             mergeMap((action) => {
-                return this.aircraftService.getAircrafts().pipe(
+                return this.aircraftService.getDeveloppementAircrafts().pipe(
                     map((aircrafts) => new GetDevelopmentAircraftsActionSuccess(aircrafts)),
                     catchError((err) => of(new GetDevelopmentAircraftsActionError(err.message)))
                 )
@@ -53,7 +53,7 @@ export class AircraftsEffects {
         () => this.effectActions.pipe(
             ofType(AircraftsActionsTypes.SEARCH_AIRCRAFTS),
             mergeMap((action) => {
-                return this.aircraftService.getAircrafts().pipe(
+                return this.aircraftService.getDeveloppementAircrafts().pipe(//getAircraftsByMsn
                     map((aircrafts) => new SearchAircraftsActionSuccess(aircrafts)),
                     catchError((err) => of(new SearchAircraftsActionError(err.message)))
                 )
