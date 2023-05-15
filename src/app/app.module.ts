@@ -9,6 +9,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AircraftsReducer } from 'src/ngrx/aircrafts.reducer';
+import { AircraftsEffects } from 'src/ngrx/aircrafts.effects';
 
 
 @NgModule({
@@ -23,8 +25,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}),
-    EffectsModule.forRoot([]),
+    StoreModule.forRoot({airbusState : AircraftsReducer }),
+    EffectsModule.forRoot([AircraftsEffects]),
     StoreDevtoolsModule.instrument()
   ],
   providers: [],

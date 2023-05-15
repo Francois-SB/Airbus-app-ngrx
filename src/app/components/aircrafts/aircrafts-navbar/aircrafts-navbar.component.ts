@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { AircraftsActionsTypes } from 'src/app/events/navbar.event';
+import { GetAllAircraftsAction } from 'src/ngrx/aircrafts.actions';
 
 @Component({
   selector: 'app-aircrafts-navbar',
@@ -12,7 +14,7 @@ export class AircraftsNavbarComponent implements OnInit {
 myForm:FormGroup;
 searchString:string="";
 
-constructor(){
+constructor(private store : Store<any>){
   let searchString = "";
   this.myForm=new FormGroup({
     search: new FormControl(searchString)
@@ -22,7 +24,7 @@ constructor(){
 ngOnInit(): void {
 }
   getAllAircrafts(){
-    this.eventEmitter.emit({type : AircraftsActionsTypes.GET_ALL_AIRCRAFTS , payload : null});
+    this.store.dispatch(new GetAllAircraftsAction({}));
   }
   getDesignedAircrafts(){
     this.eventEmitter.emit({type : AircraftsActionsTypes.GET_DESIGNED_AIRCRAFTS , payload : null});
